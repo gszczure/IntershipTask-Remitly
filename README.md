@@ -131,7 +131,7 @@ To run the application using Docker, follow these steps:
 4. Run the following command to start the application and its dependencies:
 
    ```
-   docker-compose up
+   docker-compose up --build
    ```
 
    This command will build the Docker image for the application and start the necessary containers (application and PostgreSQL database).
@@ -146,7 +146,7 @@ To run the application using Docker, follow these steps:
 
 To run the tests inside the Docker container, follow these steps:
 
-1. First, make sure the application is running using `docker-compose up`.
+1. First, make sure the application is running using (look "Running the Application" section)
 
 2. In a new terminal window, execute the following command to enter the application container:
 
