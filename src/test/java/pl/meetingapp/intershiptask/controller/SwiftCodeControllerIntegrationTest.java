@@ -131,6 +131,57 @@ class SwiftCodeControllerIntegrationTest {
     }
 
     /**
+     * Testuje dodawanie nowego kodu SWIFT o minimalnej długości (8 znaków).
+     * Sprawdza, czy odpowiedź zawiera status 200 oraz komunikat o powodzeniu.
+     **/
+    @Test
+    void testAddSwiftCodeWithShortestValidSwiftCode() throws Exception {
+        String swiftCode = "ABCDEF01";
+        String requestBody = """
+        {
+            "swiftCode": "%s",
+            "bankName": "Test Bank",
+            "address": "Test Street",
+            "countryISO2": "GR",
+            "countryName": "Grece",
+            "isHeadquarter": false
+        }
+        """.formatted(swiftCode);
+
+        mockMvc.perform(post("/v1/swift-codes/")
+                        .contentType("application/json")
+                        .content(requestBody))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.message").value("SWIFT code added successfully"));
+    }
+
+    /**
+     * Testuje dodawanie nowego kodu SWIFT o maksymalnej długości (11 znaków).
+     * Sprawdza, czy odpowiedź zawiera status 200 oraz komunikat o powodzeniu.
+     **/
+    @Test
+    void testAddSwiftCodeWithLongestValidSwiftCode() throws Exception {
+        String swiftCode = "ABCDEF12345";
+        String requestBody = """
+        {
+            "swiftCode": "%s",
+            "bankName": "Test Bank",
+            "address": "Test Street",
+            "countryISO2": "GR",
+            "countryName": "Grece",
+            "isHeadquarter": false
+        }
+        """.formatted(swiftCode);
+
+        mockMvc.perform(post("/v1/swift-codes/")
+                        .contentType("application/json")
+                        .content(requestBody))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.message").value("SWIFT code added successfully"));
+    }
+
+
+    /**
      * Testuje sytuację, gdy przekazany kod SWIFT jest nieprawidłowy (w tym tescie za krótki).
      * Sprawdza, czy odpowiedź zawiera status 400 i komunikat o błędzie walidacji.
      **/

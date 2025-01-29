@@ -6,11 +6,11 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.ResponseEntity;
-import pl.meetingapp.intershiptask.controller.SwiftCodeController;
+import pl.meetingapp.intershiptask.controller.impl.SwiftCodeController;
 import pl.meetingapp.intershiptask.dto.AddSwiftCodeRequest;
 import pl.meetingapp.intershiptask.dto.CountrySwiftCodesResponse;
 import pl.meetingapp.intershiptask.dto.SwiftCodeResponse;
-import pl.meetingapp.intershiptask.service.SwiftCodeService;
+import pl.meetingapp.intershiptask.service.impl.SwiftCodeService;
 
 import java.util.Objects;
 
