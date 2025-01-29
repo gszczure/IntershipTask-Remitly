@@ -62,15 +62,6 @@
         </dependency>
     </dependencies>
     <build>
-<!--        Build dockera nie widzi pliku excel z danymi podczas budowania wiec musze recznie mu to przekazac te pliki by  włączył je do procesu kompilacji. Ale kiedy jest to odkomentowane to przy uruchamianiu testow "mvn test" wyskakuja errory-->
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.xlsx</include>
-                </includes>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
