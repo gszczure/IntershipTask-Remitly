@@ -1,19 +1,20 @@
-package pl.meetingapp.intershiptask.controller;
+package pl.meetingapp.intershiptask.controller.impl;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.meetingapp.intershiptask.controller.SwiftCodeControllerInterface;
 import pl.meetingapp.intershiptask.dto.AddSwiftCodeRequest;
 import pl.meetingapp.intershiptask.dto.CountrySwiftCodesResponse;
 import pl.meetingapp.intershiptask.dto.SwiftCodeResponse;
-import pl.meetingapp.intershiptask.service.SwiftCodeService;
+import pl.meetingapp.intershiptask.service.impl.SwiftCodeService;
 
 import java.util.Map;
 
 @RestController
 @RequestMapping("/v1/swift-codes")
-public class SwiftCodeController {
+public class SwiftCodeController implements SwiftCodeControllerInterface {
 
     private final SwiftCodeService swiftCodeService;
 

@@ -1,4 +1,4 @@
-package pl.meetingapp.intershiptask.exception;
+package pl.meetingapp.intershiptask.exception.impl;
 
 import org.apache.coyote.BadRequestException;
 import org.springframework.http.HttpStatus;
@@ -8,11 +8,12 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import pl.meetingapp.intershiptask.dto.ErrorResponse;
+import pl.meetingapp.intershiptask.exception.GlobalExceptionHandlerInterface;
 
 import java.util.List;
 
 @ControllerAdvice
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler implements GlobalExceptionHandlerInterface {
 
     /**
      * Obsługuje wyjątki walidacyjne (np. błędy walidacji podczas obsługi żądań HTTP).

@@ -1,4 +1,4 @@
-package pl.meetingapp.intershiptask.service;
+package pl.meetingapp.intershiptask.service.impl;
 
 import jakarta.annotation.PostConstruct;
 import org.apache.poi.ss.usermodel.Row;
@@ -14,6 +14,7 @@ import pl.meetingapp.intershiptask.model.SwiftCode;
 import pl.meetingapp.intershiptask.repository.SwiftCodeRepository;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import pl.meetingapp.intershiptask.service.SwiftCodeServiceInterface;
 
 import java.io.InputStream;
 import java.util.List;
@@ -21,7 +22,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class SwiftCodeService {
+public class SwiftCodeService implements SwiftCodeServiceInterface {
 
     private final SwiftCodeRepository swiftCodeRepository;
 
