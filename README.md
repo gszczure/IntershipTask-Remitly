@@ -78,8 +78,6 @@ The detailed instructions for running the application and its description are pr
 
 ## Tests
 
-The application includes a comprehensive test suite with both unit tests and integration tests to ensure the correctness of the API endpoints, business logic, and overall system behavior.
-
 ---
 
 ### Unit Tests
@@ -118,11 +116,19 @@ There is much more that could be tested in this application. While the current t
 
 To run the application using Docker, follow these steps:
 
-1. Make sure you have Docker and Docker Compose installed on your system.
+1. First, you need to clone the repository:
 
-2. Navigate to the project root directory.
+   ```
+   git clone <repository_url>
+   ```
+   
+   After cloning the repository, follow the steps to set up and run the application.
 
-3. Run the following command to start the application and its dependencies:
+2. Make sure you have Docker and Docker Compose installed on your system.
+
+3. Navigate to the project root directory.
+
+4. Run the following command to start the application and its dependencies:
 
    ```
    docker-compose up
@@ -130,9 +136,9 @@ To run the application using Docker, follow these steps:
 
    This command will build the Docker image for the application and start the necessary containers (application and PostgreSQL database).
 
-4. The application should now be running and accessible at `http://localhost:8080`.
+5. The application should now be running and accessible at `http://localhost:8080`.
   
-5. You can test the endpoints using tools such as Postman.
+6. You can test the endpoints using tools such as Postman.
 
 ---
 
