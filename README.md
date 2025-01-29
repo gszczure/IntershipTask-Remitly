@@ -1,4 +1,4 @@
-# SWIFT Code Management Application
+# 🏦 🏧 SWIFT Code Management Application
 
 ---
 
@@ -17,7 +17,7 @@ The detailed instructions for running the application and its description are pr
 
 ---
 
-## Technologies Used
+## 💻 Technologies Used 
 
 - Java 17
 - Spring Boot 3.x
@@ -29,7 +29,7 @@ The detailed instructions for running the application and its description are pr
 
 ---
 
-## Features
+## ✨ Features
 
 - Add new SWIFT codes
 - Retrieve SWIFT code details
@@ -38,7 +38,7 @@ The detailed instructions for running the application and its description are pr
 
 ---
 
-## API Endpoints
+## 🔌 API Endpoints
 
 - `POST /v1/swift-codes/`: Add a new SWIFT code
 - `GET /v1/swift-codes/{swift-code}`: Get details of a specific SWIFT code
@@ -47,23 +47,23 @@ The detailed instructions for running the application and its description are pr
 
 ---
 
-### Endpoint Details
+### 🛠️ Endpoint Details
 
 1. **Add a new SWIFT code**
    - Method: POST
    - Path: `/v1/swift-codes/`
    - Body: JSON object containing SWIFT code details (validated)
-   - Response: Success message
+   - Response: Success message ✅
 
 2. **Get details of a specific SWIFT code**
    - Method: GET
    - Path: `/v1/swift-codes/{swift-code}`
-   - Response: SWIFT code details
+   - Response: SWIFT code details 🔍
 
 3. **Get all SWIFT codes for a specific country**
    - Method: GET
    - Path: `/v1/swift-codes/country/{countryISO2code}`
-   - Response: List of SWIFT codes for the specified country
+   - Response: List of SWIFT codes for the specified country 🌎
 
 4. **Delete a SWIFT code**
    - Method: DELETE
@@ -71,16 +71,16 @@ The detailed instructions for running the application and its description are pr
    - Query Parameters:
      - `bankName`: Name of the bank associated with the SWIFT code
      - `countryISO2`: ISO2 country code where the bank operates
-   - Response: Success message
+   - Response: Success message 🗑️
 
 
 ---
 
-## Tests
+## 📝 Tests
 
 ---
 
-### Unit Tests
+### 🔧 Unit Tests
 
 The main unit test file is `SwiftCodeControllerUnitTest.java`, which contains various test cases for the controller layer.
 
@@ -92,7 +92,7 @@ Test categories:
 
 ---
 
-### Integration Tests
+### 🔗 Integration Tests
 
 The main integration test file is `SwiftCodeControllerIntegrationTest.java`, which tests the entire flow from HTTP requests to database operations.
 
@@ -112,7 +112,7 @@ There is much more that could be tested in this application. While the current t
 
 ---
 
-## Running the Application
+## 🚀 Running the Application
 
 To run the application using Docker, follow these steps:
 
@@ -142,7 +142,7 @@ To run the application using Docker, follow these steps:
 
 ---
 
-## Running Tests
+## 🧑‍💻 Running Tests
 
 To run the tests inside the Docker container, follow these steps:
 
