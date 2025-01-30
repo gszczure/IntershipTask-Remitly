@@ -29,6 +29,7 @@ public class SwiftCodeController implements SwiftCodeControllerInterface {
      * @param swiftCode Kod SWIFT, dla którego mają być pobrane szczegóły.
      * @return Szczegóły dotyczące danego kodu SWIFT.
      */
+    @Override
     @GetMapping("/{swift-code}")
     public SwiftCodeResponse getSwiftCodeDetails(
             @PathVariable("swift-code") String swiftCode
@@ -42,6 +43,7 @@ public class SwiftCodeController implements SwiftCodeControllerInterface {
      * @param countryISO2code Kod ISO2 kraju, dla którego mają być pobrane kody SWIFT.
      * @return Lista kodów SWIFT przypisanych do danego kraju.
      */
+    @Override
     @GetMapping("/country/{countryISO2code}")
     public CountrySwiftCodesResponse getSwiftCodesByCountry(
             @PathVariable String countryISO2code
@@ -55,6 +57,7 @@ public class SwiftCodeController implements SwiftCodeControllerInterface {
      * @param request Obiekt zawierający dane kodu SWIFT do dodania (walidowane).
      * @return Informacja o sukcesie dodania kodu SWIFT.
      */
+    @Override
     @PostMapping("/")
     public ResponseEntity<?> addSwiftCode(
             @Valid @RequestBody AddSwiftCodeRequest request
@@ -71,6 +74,7 @@ public class SwiftCodeController implements SwiftCodeControllerInterface {
      * @param countryISO2 Kod ISO2 kraju, w którym działa bank z tym kodem SWIFT.
      * @return Informacja o sukcesie usunięcia kodu SWIFT.
      */
+    @Override
     @DeleteMapping("/{swift-code}")
     public ResponseEntity<?> deleteSwiftCode(
             @PathVariable("swift-code") String swiftCode,

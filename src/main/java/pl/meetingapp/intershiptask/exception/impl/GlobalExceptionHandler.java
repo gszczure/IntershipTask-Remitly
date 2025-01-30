@@ -22,6 +22,7 @@ public class GlobalExceptionHandler implements GlobalExceptionHandlerInterface {
      * @param ex wyjątek MethodArgumentNotValidException zawierający informacje o błędach walidacji.
      * @return Odpowiedź HTTP z kodem błędu 400 (Bad Request) oraz szczegółami walidacji.
      */
+    @Override
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> handleValidationException(MethodArgumentNotValidException ex) {
         BindingResult bindingResult = ex.getBindingResult();
@@ -50,6 +51,7 @@ public class GlobalExceptionHandler implements GlobalExceptionHandlerInterface {
      * @param ex wyjątek RuntimeException zawierający szczegóły błędu.
      * @return Odpowiedź HTTP z kodem błędu 500 (Internal Server Error) oraz wiadomością o błędzie.
      */
+    @Override
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<ErrorResponse> handleRuntimeException(RuntimeException ex) {
         ErrorResponse errorResponse = new ErrorResponse(
@@ -66,6 +68,7 @@ public class GlobalExceptionHandler implements GlobalExceptionHandlerInterface {
      * @param ex wyjątek BadRequestException zawierający szczegóły błędu.
      * @return Odpowiedź HTTP z kodem błędu 400 (Bad Request) oraz wiadomością o błędzie.
      */
+    @Override
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<ErrorResponse> handleBadRequestException(BadRequestException ex) {
         ErrorResponse errorResponse = new ErrorResponse(
@@ -81,6 +84,7 @@ public class GlobalExceptionHandler implements GlobalExceptionHandlerInterface {
      * @param ex wyjątek IllegalArgumentException zawierający szczegóły błędu.
      * @return Odpowiedź HTTP z kodem błędu 404 (Not Found) oraz wiadomością o błędzie.
      */
+    @Override
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ErrorResponse> handleIllegalArgumentException(IllegalArgumentException ex) {
         ErrorResponse errorResponse = new ErrorResponse(
@@ -97,6 +101,7 @@ public class GlobalExceptionHandler implements GlobalExceptionHandlerInterface {
      * @param ex wyjątek Exception zawierający szczegóły błędu.
      * @return Odpowiedź HTTP z kodem błędu 500 (Internal Server Error) oraz ogólnym komunikatem o błędzie.
      */
+    @Override
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGeneralException(Exception ex) {
         ErrorResponse errorResponse = new ErrorResponse(

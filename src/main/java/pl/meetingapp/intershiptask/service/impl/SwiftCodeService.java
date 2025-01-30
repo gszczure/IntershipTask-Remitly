@@ -34,6 +34,7 @@ public class SwiftCodeService implements SwiftCodeServiceInterface {
     /**
      * Wczytuje dane SWIFT z pliku Excel przy starcie aplikacji.
      */
+    @Override
     @PostConstruct
     public void loadSwiftCodes() throws Exception {
         Resource resource = new ClassPathResource("Interns_2025_SWIFT_CODESzmala.xlsx");
@@ -75,6 +76,7 @@ public class SwiftCodeService implements SwiftCodeServiceInterface {
      * @return Szczegóły kodu SWIFT.
      * @Walidacja: Sprawdzam, czy taki kod istnieje w bazie danych. Jeżeli nie, rzucany jest wyjątek: "SWIFT code not found".
      */
+    @Override
     public SwiftCodeResponse getSwiftCodeDetails(String swiftCode) {
         String swiftCodeUpper = swiftCode.toUpperCase();
 
@@ -106,6 +108,7 @@ public class SwiftCodeService implements SwiftCodeServiceInterface {
      * @return Lista kodów SWIFT dla kraju.
      * @Walidacja: Sprawdzam, czy lista krajów dla podanego kodu ISO2 nie jest pusta.
      */
+    @Override
     public CountrySwiftCodesResponse getSwiftCodesByCountry(String countryISO2code) {
         String countryCodeUpper = countryISO2code.toUpperCase();
 
@@ -133,6 +136,7 @@ public class SwiftCodeService implements SwiftCodeServiceInterface {
      * @param request Obiekt z danymi kodu SWIFT.
      * @Walidacja: Sprawdzam, czy kod SWIFT ma co najmniej 8 znaków lub czy istnieje już w bazie danych.
      */
+    @Override
     public void addSwiftCode(AddSwiftCodeRequest request) {
         String swiftCodeUpper = request.getSwiftCode().toUpperCase();
 
@@ -161,6 +165,7 @@ public class SwiftCodeService implements SwiftCodeServiceInterface {
      * @param countryISO2 Kod ISO2 kraju.
      * @Walidacja: Sprawdzam, czy cały rekord z podanym kodem SWIFT, nazwą banku oraz kodem ISO2 kraju istnieje w bazie danych.
      */
+    @Override
     public void deleteSwiftCode(String swiftCode, String bankName, String countryISO2) {
         String swiftCodeUpper = swiftCode.toUpperCase();
         String countryISO2Upper = countryISO2.toUpperCase();
