@@ -119,7 +119,8 @@ public class SwiftCodeService implements SwiftCodeServiceInterface {
 
         List<SwiftCode> swiftCodes = swiftCodeRepository.findByCountryISO2(countryCodeUpper);
 
-        List<SwiftCodeResponse> swiftCodeResponses = swiftCodes.stream()
+        List<SwiftCodeResponse> swiftCodeResponses = swiftCodes
+                .stream()
                 .map(swiftCode -> createSwiftCodeResponse(swiftCode, false))
                 .collect(Collectors.toList());
 
@@ -190,6 +191,12 @@ public class SwiftCodeService implements SwiftCodeServiceInterface {
 
     /**
      * Konwertuje encję SwiftCode na obiekt DTO.
+     *
+     * @param swiftCode Encja SwiftCode, która ma zostać przekształcona na obiekt DTO.
+     * @param includeCountryName Boolean, który decyduje, czy nazwa kraju (countryName) ma być uwzględniona odpowiedzi.
+     * - Jeśli true, nazwa kraju będzie dołączona do odpowiedzi.
+     * - Jeśli false, nazwa kraju nie będzie uwzględniona w odpowiedzi.
+     * @return Obiekt DTO SwiftCodeResponse.
      */
     private SwiftCodeResponse createSwiftCodeResponse(SwiftCode swiftCode, boolean includeCountryName) {
         return new SwiftCodeResponse(
